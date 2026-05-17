@@ -1,75 +1,61 @@
 # DRIFTARA
 
-A modern vacation-rental web app where travelers discover unique stays and hosts share their properties with rich photos, maps, and reviews.
+An elegant full-stack vacation rental platform where travelers discover memorable stays and hosts publish, manage, and showcase properties with photos, maps, and trusted reviews.
 
 ![Node.js](https://img.shields.io/badge/Node.js-20+-339933?logo=node.js&logoColor=white)
 ![Express](https://img.shields.io/badge/Express-4.x-000000?logo=express&logoColor=white)
 ![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-47A248?logo=mongodb&logoColor=white)
+![EJS](https://img.shields.io/badge/View%20Engine-EJS-8A2BE2)
 ![License](https://img.shields.io/badge/License-ISC-blue)
 
-## Live Links
+## Project Links
 
-- GitHub Repository: https://github.com/AnkitPandey2005/Driftara
-- Deployment: Add your live URL here
+- Repository: https://github.com/AnkitPandey2005/Driftara
+- Live Demo: Add your deployed link here
 
-## Why DRIFTARA
+## Overview
 
-DRIFTARA is built to feel fast, visual, and practical:
+DRIFTARA is designed as a production-style property listing application with secure authentication, media uploads, location discovery, and review workflows. The goal is a clean user experience backed by maintainable server architecture.
 
-- Smooth listing browse experience with category filters
-- Secure authentication flow for users
-- Cloud image upload support
-- Location map rendering on listing pages
-- Review and rating system for trust
+## Core Features
 
-## Features
-
-- User signup, login, logout
-- Create, edit, and delete listings
-- Add and delete reviews
-- Protected routes and ownership checks
-- Server-side validation with Joi
-- Flash messages for user feedback
-- Responsive UI using EJS templates and custom CSS
+- User authentication with signup, login, and logout
+- Create, edit, and delete listings with ownership protection
+- Upload listing images using Cloudinary
+- Add and remove reviews with author-based permissions
+- Category-based browsing and property discovery
+- Map integration for listing location context
+- Server-side schema validation using Joi
+- Flash messaging for meaningful UI feedback
 
 ## Tech Stack
 
-- Backend: Node.js, Express.js
-- Database: MongoDB + Mongoose
+- Runtime: Node.js
+- Server Framework: Express.js
+- Database: MongoDB with Mongoose ODM
 - Authentication: Passport.js, passport-local, passport-local-mongoose
-- Templating: EJS + ejs-mate
-- Uploads: Multer + Cloudinary
+- Templating: EJS with ejs-mate
+- File Upload: Multer + multer-storage-cloudinary
+- Session Store: express-session + connect-mongo
 - Validation: Joi
-- Sessions: express-session + connect-mongo
 
-## Project Structure
+## Architecture Snapshot
 
 ```text
 DRIFTARA/
-  controllers/
-  init/
-  models/
-  public/
-    css/
-    images/
-    js/
-  routes/
-  utils/
-  views/
-    includes/
-    layouts/
-    listings/
-    users/
-  app.js
-  cloudConfig.js
-  middlewares.js
-  schemaValidation.js
-  package.json
+  controllers/      # Request handlers
+  init/             # Seed scripts and initial data
+  models/           # Mongoose models
+  public/           # Static assets (CSS, JS, images)
+  routes/           # Route declarations
+  utils/            # Utility helpers
+  views/            # EJS templates
+  app.js            # Application entry point
 ```
 
-## Getting Started
+## Quick Start
 
-### 1. Clone
+### 1. Clone the repository
 
 ```bash
 git clone https://github.com/AnkitPandey2005/Driftara.git
@@ -82,11 +68,11 @@ cd Driftara
 npm install
 ```
 
-### 3. Create environment file
+### 3. Configure environment variables
 
-Create a `.env` file in the root using values from `.env.example`.
+Create a `.env` file in the project root (use `.env.example` as reference).
 
-Required variable names:
+Required:
 
 - ATLASDB_URL
 - SECRET
@@ -100,63 +86,67 @@ Optional:
 - SESSION_DB_URL
 - NODE_ENV
 
-### 4. Seed sample data (optional)
+### 4. Seed initial data (optional)
 
 ```bash
 npm run seed
 ```
 
-### 5. Start app
+### 5. Run the application
 
 ```bash
 npm start
 ```
 
-Open http://localhost:8080
+Application URL: http://localhost:8080
 
-## Scripts
+## Available Scripts
 
-- `npm start`: Start server
-- `npm run dev`: Start server in dev mode
-- `npm run seed`: Seed listings data
+- `npm start` - Start the application
+- `npm run dev` - Run in development mode
+- `npm run seed` - Populate database with sample listings
 
-## Security Notes
+## Security Best Practices
 
-- Never commit your `.env` file
-- Rotate credentials immediately if secrets are exposed
-- Use strong values for `SECRET` in production
+- Do not commit `.env` to version control
+- Rotate keys immediately if credentials are ever exposed
+- Use a strong, unique value for `SECRET` in production
+- Restrict database and Cloudinary permissions to minimum required scope
 
 ## Screenshots
 
-Add screenshots here:
+
 
 - Home page
-- Listing detail page
-- Create listing page
+- Listings grid and filters
+- Listing details page
+- Add/Edit listing forms
 - Authentication pages
 
-## Deployment Checklist
+## Deployment
 
-- Set all environment variables in your hosting platform
-- Use a production MongoDB URL
-- Set `NODE_ENV=production`
-- Confirm Cloudinary credentials are valid
+Before deploying, confirm:
 
-## Future Enhancements
+- All environment variables are set in the hosting platform
+- MongoDB connection is production-ready
+- Cloudinary credentials are valid
+- `NODE_ENV=production`
 
-- Booking calendar and availability management
-- Payment integration
-- Wishlist/favorites system
-- Advanced search and sorting
-- Admin moderation panel
+## Roadmap
+
+- Booking calendar and availability engine
+- Secure payments integration
+- Wishlist and saved properties
+- Advanced filtering and sorting
+- Admin moderation tools
 
 ## Contributing
 
 Contributions are welcome.
 
-1. Fork the repo
+1. Fork the repository
 2. Create a feature branch
-3. Commit your changes
+3. Commit with clear messages
 4. Open a pull request
 
 ## License
@@ -165,4 +155,4 @@ ISC
 
 ---
 
-Built by Ankit Pandey
+Built and maintained by Ankit Pandey
